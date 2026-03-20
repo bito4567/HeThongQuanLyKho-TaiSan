@@ -14,15 +14,21 @@
   --glass: backdrop-filter: blur(12px);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --btn-text: #ffffff;
+  --gradient-start: #60a5fa;
+  --gradient-end: #34d399;
 }
 
 [data-theme='light'] {
-  --background: #f9fafb;
-  --surface: rgba(255, 255, 255, 0.8);
-  --surface-border: rgba(0, 0, 0, 0.08);
-  --text-main: #111827;
-  --text-muted: #6b7280;
+  --background: #f1f5f9;
+  --surface: rgba(255, 255, 255, 0.95);
+  --surface-border: rgba(15, 23, 42, 0.08);
+  --text-main: #0f172a;
+  --text-muted: #475569;
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --btn-text: #ffffff;
+  --gradient-start: #2563eb;
+  --gradient-end: #059669;
 }
 
 * {
@@ -56,7 +62,7 @@ body {
 
 .btn-primary {
   background-color: var(--primary);
-  color: white;
+  color: var(--btn-text);
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
@@ -71,7 +77,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #60a5fa, #34d399);
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

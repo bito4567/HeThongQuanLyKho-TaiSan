@@ -325,7 +325,7 @@ const Inbound = () => {
         {[1, 2, 3, 4, 5, 10].map(s => (
           <div key={s} className={`step-item ${step === s ? 'active' : ''} ${step > s ? 'completed' : ''}`}>
             <div className="step-number">{s === 10 ? '✔' : s}</div>
-            <span style={{ fontSize: '0.7rem', fontWeight: 600 }}>
+            <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-main)' }}>
               {s === 1 ? 'Khởi tạo' : 
                s === 2 ? 'Thông tin' : 
                s === 3 ? 'Sản phẩm' : 

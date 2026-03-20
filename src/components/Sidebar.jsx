@@ -10,10 +10,13 @@ import {
   ClipboardCheck
 } from 'lucide-react'
 import { useAuth } from '../hooks/useAuth'
+import { useTheme } from '../hooks/useTheme'
+import { Sun, Moon } from 'lucide-react'
 import './Sidebar.css'
 
 const Sidebar = ({ activePage, onPageChange }) => {
   const { user, logout, hasPermission } = useAuth()
+  const { theme, toggleTheme } = useTheme()
 
   const allItems = [
     { id: 'dashboard', label: 'Tổng quan', icon: LayoutDashboard, permission: 'view_inventory' },
@@ -57,6 +60,12 @@ const Sidebar = ({ activePage, onPageChange }) => {
             <span className="user-role">{user?.role === 'admin' ? 'Quản trị viên' : user?.role === 'manager' ? 'Quản lý kho' : 'Nhân viên'}</span>
           </div>
         </div>
+        
+        <button className="nav-item theme-toggle" onClick={toggleTheme}>
+          {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          <span>{theme === 'dark' ? 'Chế độ sáng' : 'Chế độ tối'}</span>
+        </button>
+
         <button className="nav-item logout" onClick={logout}>
           <LogOut size={20} />
           <span>Đăng xuất</span>
