@@ -279,7 +279,7 @@ const Inbound = () => {
       case 9:
         return (
           <div className="processing-view glass-card animate-fade-in">
-            <Loader2 size={48} className="animate-spin" style={{ margin: '0 auto 1.5rem', color: var(--primary) }} />
+            <Loader2 size={48} className="animate-spin" style={{ margin: '0 auto 1.5rem', color: 'var(--primary)' }} />
             <h3>Đang xử lý nhập kho...</h3>
             <p style={{ marginTop: '1rem', opacity: 0.7 }}>
               {step === 6 && "Đang xác nhận trạng thái phiếu..."}

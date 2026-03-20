@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { Search, Filter, Plus, Edit, Trash2 } from 'lucide-react'
 import { useInventory } from '../hooks/useInventory'
 import './Inventory.css'
 
