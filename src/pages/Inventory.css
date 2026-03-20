@@ -1,0 +1,139 @@
+.inventory-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.inventory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.inventory-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  width: 350px;
+  height: 44px;
+}
+
+.search-icon {
+  color: var(--text-muted);
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  padding: 0 0.75rem;
+  width: 100%;
+  outline: none;
+}
+
+.btn-secondary {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1.25rem;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.inventory-table-wrapper {
+  overflow: hidden;
+  padding: 0;
+}
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.inventory-table th {
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.inventory-table td {
+  padding: 1.15rem 1.5rem;
+  border-bottom: 1px solid var(--surface-border);
+  font-size: 0.95rem;
+}
+
+.inventory-table tr:last-child td {
+  border-bottom: none;
+}
+
+.inventory-table tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.sku-cell {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.name-cell {
+  font-weight: 600;
+}
+
+.stock-cell {
+  font-weight: 700;
+}
+
+.status-badge {
+  padding: 0.4rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status-in-stock { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+.status-low-stock { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+.status-out-of-stock { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+
+.actions-cell {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+}
+
+.icon-btn.delete:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.no-results {
+  padding: 4rem;
+  text-align: center;
+  color: var(--text-muted);
+}
