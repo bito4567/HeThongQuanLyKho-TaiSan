@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import { Search, Filter, Plus, MoreVertical, Edit, Trash2 } from 'lucide-react'
-import { MOCK_INVENTORY } from '../utils/mockData'
+import { useInventory } from '../hooks/useInventory'
 import './Inventory.css'
 
 const Inventory = () => {
   const [searchTerm, setSearchTerm] = useState('')
-  const [inventory, setInventory] = useState(MOCK_INVENTORY)
+  const { inventory, loading } = useInventory()
+
+  if (loading) return <div>Đang tải dữ liệu...</div>
 
   const filteredInventory = inventory.filter(item => 
     item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
