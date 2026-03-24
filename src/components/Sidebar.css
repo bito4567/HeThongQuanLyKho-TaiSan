@@ -44,14 +44,14 @@
 .nav-item {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.85rem 1rem;
-  border-radius: 0.75rem;
+  gap: 1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
   border: none;
   background: transparent;
   color: var(--text-muted);
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 1.05rem;
+  font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
   text-align: left;

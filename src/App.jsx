@@ -6,6 +6,10 @@ import Inbound from './pages/Inbound'
 import Outbound from './pages/Outbound'
 import Login from './pages/Login'
 import Settings from './pages/Settings'
+import Approvals from './pages/Approvals'
+import Reports from './pages/Reports'
+import Audit from './pages/Audit'
+import Users from './pages/Users'
 import { useAuth } from './hooks/useAuth'
 import { InventoryProvider } from './hooks/useInventory'
 import { ThemeProvider } from './hooks/useTheme'
@@ -31,12 +35,14 @@ function App() {
         <div className="app-container" style={{ display: 'flex', minHeight: '100vh', background: 'var(--background)' }}>
           <Sidebar activePage={currentPage} onPageChange={setCurrentPage} />
           <main style={{ flex: 1, padding: '2rem', overflowY: 'auto' }}>
-            {currentPage === 'dashboard' && <Dashboard />}
+            {currentPage === 'dashboard' && <Dashboard onPageChange={setCurrentPage} />}
             {currentPage === 'inventory' && <Inventory />}
             {currentPage === 'inbound' && <Inbound />}
             {currentPage === 'outbound' && <Outbound />}
-            {currentPage === 'audit' && <div className="animate-fade-in"><h1 className="text-gradient">Kiểm kê kho</h1><p>Tính năng dành cho Quản lý và Admin.</p></div>}
-            {currentPage === 'users' && <div className="animate-fade-in"><h1 className="text-gradient">Quản lý người dùng</h1><p>Tính năng chỉ dành cho Admin.</p></div>}
+            {currentPage === 'approvals' && <Approvals />}
+            {currentPage === 'audit' && <Audit />}
+            {currentPage === 'reports' && <Reports />}
+            {currentPage === 'users' && <Users />}
             {currentPage === 'settings' && <Settings />}
           </main>
         </div>

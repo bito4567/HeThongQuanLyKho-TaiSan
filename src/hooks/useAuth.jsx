@@ -48,13 +48,20 @@ export const AuthProvider = ({ children }) => {
 
   const hasPermission = (permission) => {
     if (!user) return false;
+    
     const roles = {
-      admin: ['all', 'manage_users', 'view_reports', 'manage_inventory', 'stock_movement', 'inventory_audit'],
-      manager: ['view_reports', 'manage_inventory', 'stock_movement', 'inventory_audit', 'approve_movement'],
-      staff: ['stock_movement', 'view_inventory', 'update_quantity']
+      admin: ['all'],
+      manager: [
+        'view_dashboard', 'view_inventory', 'stock_movement', 'inventory_audit',
+        'view_reports', 'manage_products', 'manage_suppliers', 'approve_orders'
+      ],
+      staff: [
+        'view_dashboard', 'view_inventory', 'stock_movement', 'inventory_audit',
+        'create_orders', 'update_quantity', 'scan_barcode'
+      ]
     };
     
-    if (user.role === 'admin') return true;
+    if (user.role === 'admin' || roles.admin.includes(permission)) return true;
     return roles[user.role]?.includes(permission);
   };
 
